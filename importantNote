@@ -1,0 +1,41 @@
+{
+  _id: 6,
+  title: 'Schema Design Best Practices',
+  content: 'Designing schemas for optimal performance...',
+  author: 'Emily Brown',
+  comments: [
+    {
+      user: 'Kevin',
+      text: 'Invaluable insights!'
+    },
+    {
+      user: 'Lily',
+      text: 'Well-structured explanations.'
+    },
+    {
+      user: 'Eva'
+    }
+  ],
+  metadata: {
+    views: 700,
+    likes: 65
+  }
+}
+
+
+
+#### query in mongoldb
+1. db.comments.findOne({_id:6}).metadata.views
+700
+db.comments.findOne({_id:6}).comments
+[
+  { user: 'Kevin', text: 'Invaluable insights!' },
+  { user: 'Lily', text: 'Well-structured explanations.' },
+  { user: 'Eva' }
+]
+db.comments.findOne({_id:6}).comments[0].user
+Kevin
+db.comments.findOne({_id:6}).comments[2].user
+Eva
+db.comments.findOne({_id:6}).comments[1].user
+Lily
