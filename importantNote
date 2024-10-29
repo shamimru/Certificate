@@ -39,3 +39,7 @@ db.comments.findOne({_id:6}).comments[2].user
 Eva
 db.comments.findOne({_id:6}).comments[1].user
 Lily
+
+
+
+db.comments.findOne({"comments.2.user":"Eva"}).metadata.views
